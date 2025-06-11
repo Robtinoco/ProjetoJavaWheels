@@ -60,7 +60,7 @@ No arquivo `EmailService.java`, substitua:
 
 ### private static final String FROM_EMAIL = `"seuEmail@gmail.com"`;
 
-### private static final String PASSWORD = `"sua-senha-de-aplicativo"`;
+### private static final String PASSWORD = `"suaSenha"`;
 
 É necessário que o e-mail usado seja real e com envio liberado (como uma conta do Gmail com verificação em duas etapas ativada).
 
