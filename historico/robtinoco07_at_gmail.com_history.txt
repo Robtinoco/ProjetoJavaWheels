@@ -4,4 +4,4 @@ Data: 10/06/2025 23:00 | Bicicleta: Bicicleta de Corrida - Speed Pro | Duração
 Data: 10/06/2025 23:14 | Bicicleta: Bicicleta Urbana - City Ride | Duração: 10h | Total: R$100,00 | Obs: teste
 Data: 11/06/2025 00:26 | Bicicleta: Bicicleta Elétrica - Electra X | Duração: 5h | Total: R$125,00 | Obs: teste pdf bonuito
 Data: 11/06/2025 00:36 | Bicicleta: Bicicleta Tandem - DuoBike 2P | Duração: 24h | Total: R$720,00 | Obs: testePDF2
-Data: 11/06/2025 00:37 | Bicicleta: Bicicleta Tandem - DuoBike 2P | Duração: 24h | Total: R$720,00 | Obs: testePDF2
+Data: 11/06/2025 02:15 | Bicicleta: Bicicleta Dobrável - Foldable Mini | Duração: 5h | Total: R$90,00 | Obs: testeFinal?

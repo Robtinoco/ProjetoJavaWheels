@@ -1,5 +1,6 @@
 package org.example.telas;
 
+import org.example.model.Administrador;
 import org.example.service.Autenticacao;
 
 import javax.swing.*;
@@ -16,13 +17,17 @@ public class TelaLogin extends JFrame {
         JButton loginButton = new JButton("Entrar");
         JButton registerButton = new JButton("Cadastrar");
 
-        loginButton.addActionListener(e ->
-        {
-            String email = emailField.getText();
-            String password = new String(passwordField.getPassword());
+        loginButton.addActionListener(e -> {
+            String email = emailField.getText().trim();
+            String password = new String(passwordField.getPassword()).trim();
 
-            if (Autenticacao.authenticate(email, password))
-            {
+            Administrador admin = new Administrador();
+
+            if (admin.autenticar(email, password)) {
+                JOptionPane.showMessageDialog(this, "Login como administrador.");
+                dispose();
+                new TelaAdministrador();
+            } else if (Autenticacao.authenticate(email, password)) {
                 JOptionPane.showMessageDialog(this, "Login bem-sucedido!");
                 dispose();
                 new TelaAluguel(email);
@@ -31,8 +36,7 @@ public class TelaLogin extends JFrame {
             }
         });
 
-        registerButton.addActionListener(e ->
-        {
+        registerButton.addActionListener(e -> {
             dispose();
             new TelaCadastro();
         });
