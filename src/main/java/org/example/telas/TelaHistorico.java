@@ -13,7 +13,7 @@ public class TelaHistorico extends JFrame
     {
         setTitle("Histórico de Aluguéis");
         setSize(500, 400);
-        setDefaultCloseOperation(DISPOSE_ON_CLOSE); // fecha só esta janela
+        setDefaultCloseOperation(DISPOSE_ON_CLOSE);
         setLocationRelativeTo(null);
 
         JTextArea historyArea = new JTextArea();

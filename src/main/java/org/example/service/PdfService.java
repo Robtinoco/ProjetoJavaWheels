@@ -9,34 +9,33 @@ import java.io.FileOutputStream;
 public class PdfService {
     public static File generateReceipt(String email, String bike, int hours, double total, String observacao) {
         try {
-            String path = "recibo_" + System.currentTimeMillis() + ".pdf";
+            String path =  "recibo_" + System.currentTimeMillis() + ".pdf";
             File file = new File(path);
             Document document = new Document();
             PdfWriter.getInstance(document, new FileOutputStream(file));
             document.open();
 
-            // Título
             Font tituloFont = new Font(Font.FontFamily.HELVETICA, 16, Font.BOLD);
             Paragraph titulo = new Paragraph("RECIBO DE ALUGUEL DE BICICLETA", tituloFont);
             titulo.setAlignment(Element.ALIGN_CENTER);
             titulo.setSpacingAfter(20);
             document.add(titulo);
 
-            // Informações básicas
+
             Font corpo = new Font(Font.FontFamily.HELVETICA, 12);
             document.add(new Paragraph("Cliente: " + email, corpo));
             document.add(new Paragraph("Bicicleta: " + bike, corpo));
-            document.add(new Paragraph(" ", corpo)); // Espaço
+            document.add(new Paragraph(" ", corpo));
 
-            // Tabela com detalhes
-            PdfPTable table = new PdfPTable(2); // 2 colunas
+
+            PdfPTable table = new PdfPTable(2);
             table.setWidthPercentage(100);
             table.setSpacingBefore(10f);
             table.setSpacingAfter(10f);
 
-            // Cabeçalho com fundo
+
             Font headerFont = new Font(Font.FontFamily.HELVETICA, 12, Font.BOLD, BaseColor.WHITE);
-            BaseColor azulClaro = new BaseColor(0, 121, 184); // Azul para cabeçalhos
+            BaseColor azulClaro = new BaseColor(0, 121, 184);
 
             PdfPCell celulaHeader1 = new PdfPCell(new Phrase("Item", headerFont));
             celulaHeader1.setBackgroundColor(azulClaro);
@@ -49,7 +48,7 @@ public class PdfService {
             table.addCell(celulaHeader1);
             table.addCell(celulaHeader2);
 
-            // Linhas da tabela
+
             table.addCell("Duração");
             table.addCell(hours + " hora(s)");
 

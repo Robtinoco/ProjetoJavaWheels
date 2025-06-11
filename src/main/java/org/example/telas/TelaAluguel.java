@@ -32,7 +32,7 @@ public class TelaAluguel extends JFrame {
         };
 
         JComboBox<Bicicleta> bikeList = new JComboBox<>(bicicletas);
-        JTextField durationField = new JTextField(4); // compacto
+        JTextField durationField = new JTextField(4);
         JTextArea obsArea = new JTextArea(3, 20);
         JButton rentButton = new JButton("Finalizar Aluguel");
         JButton historyButton = new JButton("Ver Histórico");
@@ -58,7 +58,6 @@ public class TelaAluguel extends JFrame {
             String observacoes = obsArea.getText();
             double total = bicicletaSelecionada.getPrecoHora() * horas;
 
-            // Gera o PDF
             File pdf = PdfService.generateReceipt(
                     userEmail,
                     bicicletaSelecionada.getNome() + " - " + bicicletaSelecionada.getModelo(),
@@ -67,10 +66,8 @@ public class TelaAluguel extends JFrame {
                     observacoes
             );
 
-            // Envia por e-mail
             EmailService.sendEmail(userEmail, "Recibo de Aluguel", "Seu recibo está em anexo.", pdf);
 
-            // Salva no histórico
             Historico.saveHistory(
                     userEmail,
                     bicicletaSelecionada.getNome() + " - " + bicicletaSelecionada.getModelo(),
@@ -84,7 +81,6 @@ public class TelaAluguel extends JFrame {
 
         historyButton.addActionListener(e -> new TelaHistorico(userEmail));
 
-        // Layout
         JPanel panel = new JPanel();
         panel.setLayout(new GridBagLayout());
         GridBagConstraints gbc = new GridBagConstraints();

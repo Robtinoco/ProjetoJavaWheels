@@ -30,7 +30,6 @@ public class TelaAdministrador extends JFrame {
             new TelaLogin();
         });
 
-        // Layout centralizado com GridBagLayout
         JPanel botoes = new JPanel(new GridBagLayout());
         GridBagConstraints gbc = new GridBagConstraints();
         gbc.insets = new Insets(10, 10, 10, 10);
@@ -63,12 +62,11 @@ public class TelaAdministrador extends JFrame {
         JFreeChart pieChart = ChartFactory.createPieChart(
                 "Distribuição de Aluguéis por Tipo de Bicicleta",
                 dataset,
-                true,  // legenda
+                true,
                 true,
                 false
         );
 
-        // Oculta os labels desenhados diretamente no gráfico (traçados)
         PiePlot plot = (PiePlot) pieChart.getPlot();
         plot.setLabelGenerator(null);
 
