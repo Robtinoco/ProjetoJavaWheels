@@ -76,7 +76,5 @@ Cadastre um usuário com esse e-mail real para que os recibos possam ser enviado
 
 -`historico`: Arquivos .txt com histórico de aluguel
 
--`recibos`: PDFs gerados para cada aluguel
-
 -`users.txt`: Arquivo onde os usuários são armazenados
 
