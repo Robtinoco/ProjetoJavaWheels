@@ -13,7 +13,7 @@ import java.io.File;
 
 public class EmailService {
     private static final String FROM_EMAIL = "seuEmail@gmail.com";
-    private static final String PASSWORD = "sua-senha-de-aplicativo";
+    private static final String PASSWORD = "suaSenha";
 
     public static void sendEmail(String to, String subject, String body, File attachment) {
         Email email = EmailBuilder.startingBlank()
