@@ -74,8 +74,8 @@ Cadastre um usuário com esse e-mail real para que os recibos possam ser enviado
 
 -`telas`: Telas Swing: Login, Cadastro, Aluguel, Admin
 
-- `historico`: Arquivos .txt com histórico de aluguel
-- 
+-`historico`: Arquivos .txt com histórico de aluguel
+
 -`recibos`: PDFs gerados para cada aluguel
 
 -`Main.java`:  Ponto de entrada do sistema
