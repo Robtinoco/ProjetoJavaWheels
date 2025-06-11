@@ -82,6 +82,3 @@ Cadastre um usuário com esse e-mail real para que os recibos possam ser enviado
 
 -`users.txt`: Arquivo onde os usuários são armazenados
 
-
-##🧠 Observações
-Este projeto foi desenvolvido como parte de uma atividade acadêmica. Todo o armazenamento é feito por meio de arquivos locais, sem banco de dados. Ideal para fins educacionais e protótipos.
