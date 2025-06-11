@@ -1,27 +1,66 @@
 package org.example.service;
 
-import com.itextpdf.kernel.pdf.PdfWriter;
-import com.itextpdf.kernel.pdf.PdfDocument;
-import com.itextpdf.layout.Document;
-import com.itextpdf.layout.element.Paragraph;
+import com.itextpdf.text.*;
+import com.itextpdf.text.pdf.*;
 
 import java.io.File;
+import java.io.FileOutputStream;
 
 public class PdfService {
     public static File generateReceipt(String email, String bike, int hours, double total, String observacao) {
         try {
             String path = "recibo_" + System.currentTimeMillis() + ".pdf";
             File file = new File(path);
-            PdfWriter writer = new PdfWriter(file);
-            PdfDocument pdf = new PdfDocument(writer);
-            Document document = new Document(pdf);
+            Document document = new Document();
+            PdfWriter.getInstance(document, new FileOutputStream(file));
+            document.open();
 
-            document.add(new Paragraph("RECIBO DE ALUGUEL DE BICICLETA").setBold().setFontSize(14));
-            document.add(new Paragraph("Cliente: " + email));
-            document.add(new Paragraph("Bicicleta: " + bike));
-            document.add(new Paragraph("Duração: " + hours + " horas"));
-            document.add(new Paragraph("Total: R$" + String.format("%.2f", total)));
-            document.add(new Paragraph("Observações: " + (observacao.isBlank() ? "Nenhuma" : observacao)));
+            // Título
+            Font tituloFont = new Font(Font.FontFamily.HELVETICA, 16, Font.BOLD);
+            Paragraph titulo = new Paragraph("RECIBO DE ALUGUEL DE BICICLETA", tituloFont);
+            titulo.setAlignment(Element.ALIGN_CENTER);
+            titulo.setSpacingAfter(20);
+            document.add(titulo);
+
+            // Informações básicas
+            Font corpo = new Font(Font.FontFamily.HELVETICA, 12);
+            document.add(new Paragraph("Cliente: " + email, corpo));
+            document.add(new Paragraph("Bicicleta: " + bike, corpo));
+            document.add(new Paragraph(" ", corpo)); // Espaço
+
+            // Tabela com detalhes
+            PdfPTable table = new PdfPTable(2); // 2 colunas
+            table.setWidthPercentage(100);
+            table.setSpacingBefore(10f);
+            table.setSpacingAfter(10f);
+
+            // Cabeçalho com fundo
+            Font headerFont = new Font(Font.FontFamily.HELVETICA, 12, Font.BOLD, BaseColor.WHITE);
+            BaseColor azulClaro = new BaseColor(0, 121, 184); // Azul para cabeçalhos
+
+            PdfPCell celulaHeader1 = new PdfPCell(new Phrase("Item", headerFont));
+            celulaHeader1.setBackgroundColor(azulClaro);
+            celulaHeader1.setHorizontalAlignment(Element.ALIGN_CENTER);
+
+            PdfPCell celulaHeader2 = new PdfPCell(new Phrase("Valor", headerFont));
+            celulaHeader2.setBackgroundColor(azulClaro);
+            celulaHeader2.setHorizontalAlignment(Element.ALIGN_CENTER);
+
+            table.addCell(celulaHeader1);
+            table.addCell(celulaHeader2);
+
+            // Linhas da tabela
+            table.addCell("Duração");
+            table.addCell(hours + " hora(s)");
+
+            table.addCell("Total");
+            table.addCell("R$ " + String.format("%.2f", total));
+
+            table.addCell("Observações");
+            table.addCell(observacao.isBlank() ? "Nenhuma" : observacao);
+
+            document.add(table);
+
 
             document.close();
             return file;

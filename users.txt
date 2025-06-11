@@ -3,3 +3,4 @@ pedroh.broto@al.infnet.edu.br;123
 gustavo.hertz@al.infnet.edu.br;123
 roberto.caparica@gmail.com;teste
 joao.doreste@al.infnet.edu.br;teste
+guilherme.pirozi@al.infnet.edu.br;teste
