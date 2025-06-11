@@ -58,15 +58,15 @@ Gere uma senha de aplicativo.
 
 No arquivo EmailService.java, substitua:
 
-private static final String FROM_EMAIL = "seuEmail@gmail.com";
-private static final String PASSWORD = "sua-senha-de-aplicativo";
+private static final String FROM_EMAIL = `"seuEmail@gmail.com"`;
+private static final String PASSWORD = `"sua-senha-de-aplicativo"`;
 
 É necessário que o e-mail usado seja real e com envio liberado (como uma conta do Gmail com verificação em duas etapas ativada).
 
 Cadastre um usuário com esse e-mail real para que os recibos possam ser enviados corretamente.
 
 ## Principais Componentes
-ProjetoWheels/
+
 -`model`: Entidades como Usuario, Bicicleta, Administrador
 -`service`: Lógica de autenticação, PDF, e-mail, histórico
 -`telas`: Telas Swing: Login, Cadastro, Aluguel, Admin
