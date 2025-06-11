@@ -78,7 +78,5 @@ Cadastre um usuário com esse e-mail real para que os recibos possam ser enviado
 
 -`recibos`: PDFs gerados para cada aluguel
 
--`Main.java`:  Ponto de entrada do sistema
-
 -`users.txt`: Arquivo onde os usuários são armazenados
 
