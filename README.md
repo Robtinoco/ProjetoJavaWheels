@@ -59,6 +59,7 @@ Gere uma senha de aplicativo.
 No arquivo EmailService.java, substitua:
 
 private static final String FROM_EMAIL = `"seuEmail@gmail.com"`;
+
 private static final String PASSWORD = `"sua-senha-de-aplicativo"`;
 
 É necessário que o e-mail usado seja real e com envio liberado (como uma conta do Gmail com verificação em duas etapas ativada).
@@ -68,11 +69,17 @@ Cadastre um usuário com esse e-mail real para que os recibos possam ser enviado
 ## Principais Componentes
 
 -`model`: Entidades como Usuario, Bicicleta, Administrador
+
 -`service`: Lógica de autenticação, PDF, e-mail, histórico
+
 -`telas`: Telas Swing: Login, Cadastro, Aluguel, Admin
+
 - `historico`: Arquivos .txt com histórico de aluguel
+- 
 -`recibos`: PDFs gerados para cada aluguel
+
 -`Main.java`:  Ponto de entrada do sistema
+
 -`users.txt`: Arquivo onde os usuários são armazenados
 
 
