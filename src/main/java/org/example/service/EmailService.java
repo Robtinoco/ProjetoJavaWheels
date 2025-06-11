@@ -12,8 +12,8 @@ import jakarta.activation.FileDataSource;
 import java.io.File;
 
 public class EmailService {
-    private static final String FROM_EMAIL = "roberto.caparica@al.infnet.edu.br";
-    private static final String PASSWORD = "fuic skum nwcp mona";
+    private static final String FROM_EMAIL = "seuEmail@gmail.com";
+    private static final String PASSWORD = "sua-senha-de-aplicativo";
 
     public static void sendEmail(String to, String subject, String body, File attachment) {
         Email email = EmailBuilder.startingBlank()
